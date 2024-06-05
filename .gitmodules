@@ -1,0 +1,3 @@
+[submodule "sub_test1"]
+	path = sub_test1
+	url = https://github.com/Anesta2601/sub_test1
