@@ -4,3 +4,6 @@
 [submodule "docker"]
 	path = docker
 	url = https://github.com/jenkinsci/docker
+[submodule "rep555"]
+	path = rep555
+	url = https://github.com/Anesta2601/rep555
