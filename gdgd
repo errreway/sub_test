@@ -125,14 +125,7 @@
 	<header id="header" class="alt">
 					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
 					<nav id="nav">
-						<ul>
-							<li><a href="index_en.html" class="selected">Home</a></li>
-							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
-							<li><a href="about_this_website.html">About this website</a></li>
-							<li><a href="links_en.html">Links</a></li>
-							<li><a href="index.html" class="button-top">German</a></li>
-						</ul>
-					</nav>
+						<u
 				</header>
 
 			<!-- Banner -->
@@ -272,7 +265,13 @@
 							<h4>English</h4>
 							<p>"The Extremes of Good and Evil" Cicero<br/>
 							Sections 1.10.32 - 1.10.33</p>
-					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+
+вдтилсядылсиыдс
+
+ятсибьячисля
+
+
+ярисяисю<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
 							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
 	 						 <p>Translation from H. Rackham<br />
 	 						 1914 edition De Finibus</p>
@@ -475,18 +474,7 @@
 					<section class="box special">
 						<header class="major">
 						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
-						<input type="hidden" name="loremString" value="latin">
-                		<h2>Generate Lorem Ipsum Text</h2>
-							<div>&nbsp</div>
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-5 col-12-mobilep">
-								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
-								</div>
-                  				<div class="col-5 col-12-mobilep">
-									<select name="type" >
-										<option value="characters">Characters</option>
-										<option value="words" selected="selected">Words</option>
-										<option value="paragraphs">Paragraphs</option>
+				="paragraphs">Paragraphs</option>
 								  </select>
 								</div>
 								<div class="col-2 col-12-mobilep">
@@ -666,7 +654,13 @@
 
 <!--
         Lorem Ipsum generater idea based on the code written by Captain Cursor,
-        aka Taylor and later adapted by Travis Spencer . 
+        aka Taylor and later сибья сьячс
+
+яимсоиячмсия
+
+сиюмяьсимяч/с
+
+симђ~сичяadapted by Travis Spencer . 
 		This web version has been adapted 
 		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
 
