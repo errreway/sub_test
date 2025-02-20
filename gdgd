@@ -1,0 +1,2917 @@
+
+<!DOCTYPE HTML>
+<!-- Signale.com -->
+<html>
+	<head>
+		<title>Lorem ipsum - Generator and Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="loremipsum.de, Lorem ipsum dolor sit amet, lorem, lorem ipsum, generator, lorem ipsum generator, designers, designer, blind, dummy, mock, filler">
+<meta name="description" content="loremipsum.de was the first ever dedicated website for Lorem ipsum. You can generate your own lorem ipsum text and find out about the history and modern days useage of lorem ipsum text">
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/cookieconsent.min.css" />
+
+
+<!--
+        Lorem Ipsum generater idea based on the code written by Captain Cursor,
+        aka Taylor and later adapted by Travis Spencer . 
+		This web version has been adapted 
+		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
+
+        This code is public domain. If you use it, please provide credits to
+		to all of the above.
+-->
+
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+
+    function objectTag()
+    {
+    	var lorem = new Array();
+
+    	switch( document.theForm.loremString.value )
+    	{
+    		case "latin":
+    		{
+				lorem[0] = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ";
+				lorem[1] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ";
+				lorem[2] = "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+				lorem[3] = "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ";
+				lorem[4] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ";
+				lorem[5] = "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. ";
+				lorem[6] = "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. ";
+    			break;
+    		}
+    		
+    	}
+
+        if( "characters" == document.theForm.type.value )
+        {
+        	var outputString = '';
+            var numOfChars = document.theForm.numbers.value;
+            numOfChars = parseInt( numOfChars );
+            var tempString = lorem.join( "\n\n" );
+            while ( outputString.length < numOfChars ) outputString += tempString;
+            document.forms[0].output.value = outputString.substring(0, numOfChars );
+        }
+        else if( "words" == document.theForm.type.value )
+        {
+            var numOfWords = document.theForm.numbers.value;
+            numOfWords = parseInt( numOfWords );
+
+            var list = new Array();
+            var wordList = new Array();
+            wordList = lorem[ 0 ].split( ' ' );
+            var iParagraphCount = 0;
+            var iWordCount = 0;
+
+            while( list.length < numOfWords )
+            {
+            	if( iWordCount > wordList.length )
+            	{
+            		iWordCount = 0;
+            		iParagraphCount++;
+            		if( iParagraphCount + 1 > lorem.length ) iParagraphCount = 0;
+            		wordList = lorem[ iParagraphCount ].split( ' ' );
+            		wordList[ 0 ] = "\n\n" + wordList[ 0 ];
+            	}
+
+            	list.push( wordList[ iWordCount ] );
+
+            	iWordCount++;
+            }
+            document.forms[0].output.value = list.join( ' ' );
+        }
+        else
+        {
+            var numOfParagraphs = document.theForm.numbers.value;
+            numOfParagraphs = parseInt( numOfParagraphs );
+
+            var list = new Array();
+			var iParagraphCount = 0;
+
+            while( list.length < numOfParagraphs )
+            {
+            	if( iParagraphCount +1 > lorem.length )
+            	{
+            		iParagraphCount = 0;
+            	}
+
+            	list.push( lorem[ iParagraphCount ] );
+            	iParagraphCount++;
+            }
+            document.forms[0].output.value = list.join( "\n\n" );
+        }
+    }
+
+    function copypaste()
+    {
+        var copyText = document.getElementById("LoremText");
+		 copyText.select();
+		 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		 document.execCommand("copy");
+    }
+    //]]>
+</script>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+	<header id="header" class="alt">
+					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index_en.html" class="selected">Home</a></li>
+							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
+							<li><a href="about_this_website.html">About this website</a></li>
+							<li><a href="links_en.html">Links</a></li>
+							<li><a href="index.html" class="button-top">German</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+	<section id="banner">
+		<div class="title">
+					<h2>Lorem Ipsum Generator</h2>
+		</div>
+		<div class="title">
+					<p>For designers, typesetters, layouts, enthusiasts and many more.</p>
+		</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
+						<input type="hidden" name="loremString" value="latin">
+                		<h2>Generate Lorem Ipsum Text</h2>
+							<div>&nbsp</div>
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-5 col-12-mobilep">
+								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
+								</div>
+                  				<div class="col-5 col-12-mobilep">
+									<select name="type" >
+										<option value="characters">Characters</option>
+										<option value="words" selected="selected">Words</option>
+										<option value="paragraphs">Paragraphs</option>
+								  </select>
+								</div>
+								<div class="col-2 col-12-mobilep">
+                  					<input type="submit" name="btnOK" value="Update">
+                  				</div>
+						  </div>			
+                
+				 			<div class="row gtr-uniform gtr-50">		
+             					<div class="col-12 col-12-mobilep">
+                 					 <textarea cols="68" rows="6" name="output" wrap="PHYSICAL" id="LoremText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+           					  </div>	
+							
+							
+			  				  <div class="col-12 col-12-mobilep">
+                  					<input type="button" onClick="copypaste()" value="Copy Text" class="blue"><br/> and paste...
+				  				</div>			
+							</div>	
+							</form>
+					</section>
+						
+						
+					
+					<section class="box">
+						<div class="row gtr-uniform gtr-50">		
+             					<div class="col-8 col-12-mobilep">
+						<header>
+							<h3>Why Lorem Ipsum?</h3>
+						</header>
+						<p>When working on a project and the customer has not yet delivered the copy, something is missing... text. </p>
+					  		<p>If the project is complete but looking only half finished, try some Lorem ipsum... blind / filler / mock / dummy / greeked / placeholder text.</p>
+							<p>The advantage of the Lorem Ipsum text is that it appears to be natural, like the real copy</p>
+							<p>Simply generate as much Lorem ipsum text as you require, paste it into the layout as a temporary place holder and your project is one step closer to completion. Enjoy.</p>
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<span class="image fit"><img src="images/brochure_lorem.gif" alt="Lorem Ipsum Blind Text" /></span>
+							</div>	
+									
+									
+                    </section>
+						
+					<section class="box">	
+						<header>
+							<h3>Download Lorem ipsum text</h3>
+						</header>
+					  		
+						
+							<p>Here you can download various examples of Lorem ipsum text. Each text is available as a text or a word .doc (in .zip format).</p>
+					  		<p>PC - right mouse click and save to the desktop<br />
+							Mac - option click and save to desktop</p>
+						
+						<div class="table-wrapper">
+										<table>
+			
+											<tbody>
+												<tr>
+													<td>Original</td>
+													<td><a href="https://loremipsum.de/downloads/original.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/original.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 1</td>
+													<td><a href="https://loremipsum.de/downloads/version1.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version1.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 2</td>
+													<td><a href="https://loremipsum.de/downloads/version2.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version2.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 3</td>
+													<td><a href="https://loremipsum.de/downloads/version3.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version3.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 4</td>
+													<td><a href="https://loremipsum.de/downloads/version4.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version4.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 5</td>
+													<td><a href="https://loremipsum.de/downloads/version5.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version5.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 6</td>
+													<td><a href="https://loremipsum.de/downloads/version6.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version6.zip">download .doc file</a> (zipped)</td>
+												</tr>
+											</tbody>
+											
+										</table>
+					  </div>
+                    </section>	
+
+	<section class="box">	
+						<header>
+							<h3>Original Text in Latin, English and German</h3>
+						</header>
+							<hr />
+							<h4>Latin</h4>
+						<p>"De finibus bonorum et malorum" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<hr />
+							<h4>English</h4>
+							<p>"The Extremes of Good and Evil" Cicero<br/>
+							Sections 1.10.32 - 1.10.33</p>
+					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+	 						 <p>Translation from H. Rackham<br />
+	 						 1914 edition De Finibus</p>
+							<hr />
+							<h4>German </h4>
+						<p>"Das höchste Gut und Uebel" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Uebungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?</p>
+							<p>Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Uebernahme gewisser Schmerzen sich grössere erspare.</p>
+	
+							
+					  	
+                    </section>
+						
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>get inspired</h2>
+					<h4><a href="https://www.grafikdesign.de" target="_blank">visit grafikdesign.de</a></h4>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li><a href="imprint_en.html">Imprint &amp; Privacy</a></li>
+						<li><a href="" onclick="openCCbanner(); return false;">Cookie-Settings</a></li>
+					</ul>
+	</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/cookie-en.js"></script>
+			<script src="assets/js//cookieconsent.min.js" data-cfasync="false"></script>
+
+</body>
+</html>
+<!DOCTYPE HTML>
+<!-- Signale.com -->
+<html>
+	<head>
+		<title>Lorem ipsum - Generator and Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="loremipsum.de, Lorem ipsum dolor sit amet, lorem, lorem ipsum, generator, lorem ipsum generator, designers, designer, blind, dummy, mock, filler">
+<meta name="description" content="loremipsum.de was the first ever dedicated website for Lorem ipsum. You can generate your own lorem ipsum text and find out about the history and modern days useage of lorem ipsum text">
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/cookieconsent.min.css" />
+
+
+<!--
+        Lorem Ipsum generater idea based on the code written by Captain Cursor,
+        aka Taylor and later adapted by Travis Spencer . 
+		This web version has been adapted 
+		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
+
+        This code is public domain. If you use it, please provide credits to
+		to all of the above.
+-->
+
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+
+    function objectTag()
+    {
+    	var lorem = new Array();
+
+    	switch( document.theForm.loremString.value )
+    	{
+    		case "latin":
+    		{
+				lorem[0] = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ";
+				lorem[1] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ";
+				lorem[2] = "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+				lorem[3] = "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ";
+				lorem[4] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ";
+				lorem[5] = "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. ";
+				lorem[6] = "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. ";
+    			break;
+    		}
+    		
+    	}
+
+        if( "characters" == document.theForm.type.value )
+        {
+        	var outputString = '';
+            var numOfChars = document.theForm.numbers.value;
+            numOfChars = parseInt( numOfChars );
+            var tempString = lorem.join( "\n\n" );
+            while ( outputString.length < numOfChars ) outputString += tempString;
+            document.forms[0].output.value = outputString.substring(0, numOfChars );
+        }
+        else if( "words" == document.theForm.type.value )
+        {
+            var numOfWords = document.theForm.numbers.value;
+            numOfWords = parseInt( numOfWords );
+
+            var list = new Array();
+            var wordList = new Array();
+            wordList = lorem[ 0 ].split( ' ' );
+            var iParagraphCount = 0;
+            var iWordCount = 0;
+
+            while( list.length < numOfWords )
+            {
+            	if( iWordCount > wordList.length )
+            	{
+            		iWordCount = 0;
+            		iParagraphCount++;
+            		if( iParagraphCount + 1 > lorem.length ) iParagraphCount = 0;
+            		wordList = lorem[ iParagraphCount ].split( ' ' );
+            		wordList[ 0 ] = "\n\n" + wordList[ 0 ];
+            	}
+
+            	list.push( wordList[ iWordCount ] );
+
+            	iWordCount++;
+            }
+            document.forms[0].output.value = list.join( ' ' );
+        }
+        else
+        {
+            var numOfParagraphs = document.theForm.numbers.value;
+            numOfParagraphs = parseInt( numOfParagraphs );
+
+            var list = new Array();
+			var iParagraphCount = 0;
+
+            while( list.length < numOfParagraphs )
+            {
+            	if( iParagraphCount +1 > lorem.length )
+            	{
+            		iParagraphCount = 0;
+            	}
+
+            	list.push( lorem[ iParagraphCount ] );
+            	iParagraphCount++;
+            }
+            document.forms[0].output.value = list.join( "\n\n" );
+        }
+    }
+
+    function copypaste()
+    {
+        var copyText = document.getElementById("LoremText");
+		 copyText.select();
+		 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		 document.execCommand("copy");
+    }
+    //]]>
+</script>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+	<header id="header" class="alt">
+					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index_en.html" class="selected">Home</a></li>
+							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
+							<li><a href="about_this_website.html">About this website</a></li>
+							<li><a href="links_en.html">Links</a></li>
+							<li><a href="index.html" class="button-top">German</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+	<section id="banner">
+		<div class="title">
+					<h2>Lorem Ipsum Generator</h2>
+		</div>
+		<div class="title">
+					<p>For designers, typesetters, layouts, enthusiasts and many more.</p>
+		</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
+						<input type="hidden" name="loremString" value="latin">
+                		<h2>Generate Lorem Ipsum Text</h2>
+							<div>&nbsp</div>
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-5 col-12-mobilep">
+								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
+								</div>
+                  				<div class="col-5 col-12-mobilep">
+									<select name="type" >
+										<option value="characters">Characters</option>
+										<option value="words" selected="selected">Words</option>
+										<option value="paragraphs">Paragraphs</option>
+								  </select>
+								</div>
+								<div class="col-2 col-12-mobilep">
+                  					<input type="submit" name="btnOK" value="Update">
+                  				</div>
+						  </div>			
+                
+				 			<div class="row gtr-uniform gtr-50">		
+             					<div class="col-12 col-12-mobilep">
+                 					 <textarea cols="68" rows="6" name="output" wrap="PHYSICAL" id="LoremText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+           					  </div>	
+							
+							
+			  				  <div class="col-12 col-12-mobilep">
+                  					<input type="button" onClick="copypaste()" value="Copy Text" class="blue"><br/> and paste...
+				  				</div>			
+							</div>	
+							</form>
+					</section>
+						
+						
+					
+					<section class="box">
+						<div class="row gtr-uniform gtr-50">		
+             					<div class="col-8 col-12-mobilep">
+						<header>
+							<h3>Why Lorem Ipsum?</h3>
+						</header>
+						<p>When working on a project and the customer has not yet delivered the copy, something is missing... text. </p>
+					  		<p>If the project is complete but looking only half finished, try some Lorem ipsum... blind / filler / mock / dummy / greeked / placeholder text.</p>
+							<p>The advantage of the Lorem Ipsum text is that it appears to be natural, like the real copy</p>
+							<p>Simply generate as much Lorem ipsum text as you require, paste it into the layout as a temporary place holder and your project is one step closer to completion. Enjoy.</p>
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<span class="image fit"><img src="images/brochure_lorem.gif" alt="Lorem Ipsum Blind Text" /></span>
+							</div>	
+									
+									
+                    </section>
+						
+					<section class="box">	
+						<header>
+							<h3>Download Lorem ipsum text</h3>
+						</header>
+					  		
+						
+							<p>Here you can download various examples of Lorem ipsum text. Each text is available as a text or a word .doc (in .zip format).</p>
+					  		<p>PC - right mouse click and save to the desktop<br />
+							Mac - option click and save to desktop</p>
+						
+						<div class="table-wrapper">
+										<table>
+			
+											<tbody>
+												<tr>
+													<td>Original</td>
+													<td><a href="https://loremipsum.de/downloads/original.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/original.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 1</td>
+													<td><a href="https://loremipsum.de/downloads/version1.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version1.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 2</td>
+													<td><a href="https://loremipsum.de/downloads/version2.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version2.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 3</td>
+													<td><a href="https://loremipsum.de/downloads/version3.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version3.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 4</td>
+													<td><a href="https://loremipsum.de/downloads/version4.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version4.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 5</td>
+													<td><a href="https://loremipsum.de/downloads/version5.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version5.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 6</td>
+													<td><a href="https://loremipsum.de/downloads/version6.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version6.zip">download .doc file</a> (zipped)</td>
+												</tr>
+											</tbody>
+											
+										</table>
+					  </div>
+                    </section>	
+
+	<section class="box">	
+						<header>
+							<h3>Original Text in Latin, English and German</h3>
+						</header>
+							<hr />
+							<h4>Latin</h4>
+						<p>"De finibus bonorum et malorum" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<hr />
+							<h4>English</h4>
+							<p>"The Extremes of Good and Evil" Cicero<br/>
+							Sections 1.10.32 - 1.10.33</p>
+					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+	 						 <p>Translation from H. Rackham<br />
+	 						 1914 edition De Finibus</p>
+							<hr />
+							<h4>German </h4>
+						<p>"Das höchste Gut und Uebel" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Uebungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?</p>
+							<p>Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Uebernahme gewisser Schmerzen sich grössere erspare.</p>
+	
+							
+					  	
+                    </section>
+						
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>get inspired</h2>
+					<h4><a href="https://www.grafikdesign.de" target="_blank">visit grafikdesign.de</a></h4>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li><a href="imprint_en.html">Imprint &amp; Privacy</a></li>
+						<li><a href="" onclick="openCCbanner(); return false;">Cookie-Settings</a></li>
+					</ul>
+	</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/cookie-en.js"></script>
+			<script src="assets/js//cookieconsent.min.js" data-cfasync="false"></script>
+
+</body>
+</html>
+<!DOCTYPE HTML>
+<!-- Signale.com -->
+<html>
+	<head>
+		<title>Lorem ipsum - Generator and Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="loremipsum.de, Lorem ipsum dolor sit amet, lorem, lorem ipsum, generator, lorem ipsum generator, designers, designer, blind, dummy, mock, filler">
+<meta name="description" content="loremipsum.de was the first ever dedicated website for Lorem ipsum. You can generate your own lorem ipsum text and find out about the history and modern days useage of lorem ipsum text">
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/cookieconsent.min.css" />
+
+
+<!--
+        Lorem Ipsum generater idea based on the code written by Captain Cursor,
+        aka Taylor and later adapted by Travis Spencer . 
+		This web version has been adapted 
+		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
+
+        This code is public domain. If you use it, please provide credits to
+		to all of the above.
+-->
+
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+
+    function objectTag()
+    {
+    	var lorem = new Array();
+
+    	switch( document.theForm.loremString.value )
+    	{
+    		case "latin":
+    		{
+				lorem[0] = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ";
+				lorem[1] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ";
+				lorem[2] = "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+				lorem[3] = "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ";
+				lorem[4] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ";
+				lorem[5] = "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. ";
+				lorem[6] = "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. ";
+    			break;
+    		}
+    		
+    	}
+
+        if( "characters" == document.theForm.type.value )
+        {
+        	var outputString = '';
+            var numOfChars = document.theForm.numbers.value;
+            numOfChars = parseInt( numOfChars );
+            var tempString = lorem.join( "\n\n" );
+            while ( outputString.length < numOfChars ) outputString += tempString;
+            document.forms[0].output.value = outputString.substring(0, numOfChars );
+        }
+        else if( "words" == document.theForm.type.value )
+        {
+            var numOfWords = document.theForm.numbers.value;
+            numOfWords = parseInt( numOfWords );
+
+            var list = new Array();
+            var wordList = new Array();
+            wordList = lorem[ 0 ].split( ' ' );
+            var iParagraphCount = 0;
+            var iWordCount = 0;
+
+            while( list.length < numOfWords )
+            {
+            	if( iWordCount > wordList.length )
+            	{
+            		iWordCount = 0;
+            		iParagraphCount++;
+            		if( iParagraphCount + 1 > lorem.length ) iParagraphCount = 0;
+            		wordList = lorem[ iParagraphCount ].split( ' ' );
+            		wordList[ 0 ] = "\n\n" + wordList[ 0 ];
+            	}
+
+            	list.push( wordList[ iWordCount ] );
+
+            	iWordCount++;
+            }
+            document.forms[0].output.value = list.join( ' ' );
+        }
+        else
+        {
+            var numOfParagraphs = document.theForm.numbers.value;
+            numOfParagraphs = parseInt( numOfParagraphs );
+
+            var list = new Array();
+			var iParagraphCount = 0;
+
+            while( list.length < numOfParagraphs )
+            {
+            	if( iParagraphCount +1 > lorem.length )
+            	{
+            		iParagraphCount = 0;
+            	}
+
+            	list.push( lorem[ iParagraphCount ] );
+            	iParagraphCount++;
+            }
+            document.forms[0].output.value = list.join( "\n\n" );
+        }
+    }
+
+    function copypaste()
+    {
+        var copyText = document.getElementById("LoremText");
+		 copyText.select();
+		 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		 document.execCommand("copy");
+    }
+    //]]>
+</script>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+	<header id="header" class="alt">
+					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index_en.html" class="selected">Home</a></li>
+							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
+							<li><a href="about_this_website.html">About this website</a></li>
+							<li><a href="links_en.html">Links</a></li>
+							<li><a href="index.html" class="button-top">German</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+	<section id="banner">
+		<div class="title">
+					<h2>Lorem Ipsum Generator</h2>
+		</div>
+		<div class="title">
+					<p>For designers, typesetters, layouts, enthusiasts and many more.</p>
+		</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
+						<input type="hidden" name="loremString" value="latin">
+                		<h2>Generate Lorem Ipsum Text</h2>
+							<div>&nbsp</div>
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-5 col-12-mobilep">
+								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
+								</div>
+                  				<div class="col-5 col-12-mobilep">
+									<select name="type" >
+										<option value="characters">Characters</option>
+										<option value="words" selected="selected">Words</option>
+										<option value="paragraphs">Paragraphs</option>
+								  </select>
+								</div>
+								<div class="col-2 col-12-mobilep">
+                  					<input type="submit" name="btnOK" value="Update">
+                  				</div>
+						  </div>			
+                
+				 			<div class="row gtr-uniform gtr-50">		
+             					<div class="col-12 col-12-mobilep">
+                 					 <textarea cols="68" rows="6" name="output" wrap="PHYSICAL" id="LoremText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+           					  </div>	
+							
+							
+			  				  <div class="col-12 col-12-mobilep">
+                  					<input type="button" onClick="copypaste()" value="Copy Text" class="blue"><br/> and paste...
+				  				</div>			
+							</div>	
+							</form>
+					</section>
+						
+						
+					
+					<section class="box">
+						<div class="row gtr-uniform gtr-50">		
+             					<div class="col-8 col-12-mobilep">
+						<header>
+							<h3>Why Lorem Ipsum?</h3>
+						</header>
+						<p>When working on a project and the customer has not yet delivered the copy, something is missing... text. </p>
+					  		<p>If the project is complete but looking only half finished, try some Lorem ipsum... blind / filler / mock / dummy / greeked / placeholder text.</p>
+							<p>The advantage of the Lorem Ipsum text is that it appears to be natural, like the real copy</p>
+							<p>Simply generate as much Lorem ipsum text as you require, paste it into the layout as a temporary place holder and your project is one step closer to completion. Enjoy.</p>
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<span class="image fit"><img src="images/brochure_lorem.gif" alt="Lorem Ipsum Blind Text" /></span>
+							</div>	
+									
+									
+                    </section>
+						
+					<section class="box">	
+						<header>
+							<h3>Download Lorem ipsum text</h3>
+						</header>
+					  		
+						
+							<p>Here you can download various examples of Lorem ipsum text. Each text is available as a text or a word .doc (in .zip format).</p>
+					  		<p>PC - right mouse click and save to the desktop<br />
+							Mac - option click and save to desktop</p>
+						
+						<div class="table-wrapper">
+										<table>
+			
+											<tbody>
+												<tr>
+													<td>Original</td>
+													<td><a href="https://loremipsum.de/downloads/original.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/original.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 1</td>
+													<td><a href="https://loremipsum.de/downloads/version1.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version1.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 2</td>
+													<td><a href="https://loremipsum.de/downloads/version2.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version2.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 3</td>
+													<td><a href="https://loremipsum.de/downloads/version3.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version3.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 4</td>
+													<td><a href="https://loremipsum.de/downloads/version4.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version4.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 5</td>
+													<td><a href="https://loremipsum.de/downloads/version5.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version5.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 6</td>
+													<td><a href="https://loremipsum.de/downloads/version6.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version6.zip">download .doc file</a> (zipped)</td>
+												</tr>
+											</tbody>
+											
+										</table>
+					  </div>
+                    </section>	
+
+	<section class="box">	
+						<header>
+							<h3>Original Text in Latin, English and German</h3>
+						</header>
+							<hr />
+							<h4>Latin</h4>
+						<p>"De finibus bonorum et malorum" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<hr />
+							<h4>English</h4>
+							<p>"The Extremes of Good and Evil" Cicero<br/>
+							Sections 1.10.32 - 1.10.33</p>
+					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+	 						 <p>Translation from H. Rackham<br />
+	 						 1914 edition De Finibus</p>
+							<hr />
+							<h4>German </h4>
+						<p>"Das höchste Gut und Uebel" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Uebungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?</p>
+							<p>Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Uebernahme gewisser Schmerzen sich grössere erspare.</p>
+	
+							
+					  	
+                    </section>
+						
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>get inspired</h2>
+					<h4><a href="https://www.grafikdesign.de" target="_blank">visit grafikdesign.de</a></h4>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li><a href="imprint_en.html">Imprint &amp; Privacy</a></li>
+						<li><a href="" onclick="openCCbanner(); return false;">Cookie-Settings</a></li>
+					</ul>
+	</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/cookie-en.js"></script>
+			<script src="assets/js//cookieconsent.min.js" data-cfasync="false"></script>
+
+</body>
+</html>
+<!DOCTYPE HTML>
+<!-- Signale.com -->
+<html>
+	<head>
+		<title>Lorem ipsum - Generator and Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="loremipsum.de, Lorem ipsum dolor sit amet, lorem, lorem ipsum, generator, lorem ipsum generator, designers, designer, blind, dummy, mock, filler">
+<meta name="description" content="loremipsum.de was the first ever dedicated website for Lorem ipsum. You can generate your own lorem ipsum text and find out about the history and modern days useage of lorem ipsum text">
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/cookieconsent.min.css" />
+
+
+<!--
+        Lorem Ipsum generater idea based on the code written by Captain Cursor,
+        aka Taylor and later adapted by Travis Spencer . 
+		This web version has been adapted 
+		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
+
+        This code is public domain. If you use it, please provide credits to
+		to all of the above.
+-->
+
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+
+    function objectTag()
+    {
+    	var lorem = new Array();
+
+    	switch( document.theForm.loremString.value )
+    	{
+    		case "latin":
+    		{
+				lorem[0] = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ";
+				lorem[1] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ";
+				lorem[2] = "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+				lorem[3] = "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ";
+				lorem[4] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ";
+				lorem[5] = "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. ";
+				lorem[6] = "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. ";
+    			break;
+    		}
+    		
+    	}
+
+        if( "characters" == document.theForm.type.value )
+        {
+        	var outputString = '';
+            var numOfChars = document.theForm.numbers.value;
+            numOfChars = parseInt( numOfChars );
+            var tempString = lorem.join( "\n\n" );
+            while ( outputString.length < numOfChars ) outputString += tempString;
+            document.forms[0].output.value = outputString.substring(0, numOfChars );
+        }
+        else if( "words" == document.theForm.type.value )
+        {
+            var numOfWords = document.theForm.numbers.value;
+            numOfWords = parseInt( numOfWords );
+
+            var list = new Array();
+            var wordList = new Array();
+            wordList = lorem[ 0 ].split( ' ' );
+            var iParagraphCount = 0;
+            var iWordCount = 0;
+
+            while( list.length < numOfWords )
+            {
+            	if( iWordCount > wordList.length )
+            	{
+            		iWordCount = 0;
+            		iParagraphCount++;
+            		if( iParagraphCount + 1 > lorem.length ) iParagraphCount = 0;
+            		wordList = lorem[ iParagraphCount ].split( ' ' );
+            		wordList[ 0 ] = "\n\n" + wordList[ 0 ];
+            	}
+
+            	list.push( wordList[ iWordCount ] );
+
+            	iWordCount++;
+            }
+            document.forms[0].output.value = list.join( ' ' );
+        }
+        else
+        {
+            var numOfParagraphs = document.theForm.numbers.value;
+            numOfParagraphs = parseInt( numOfParagraphs );
+
+            var list = new Array();
+			var iParagraphCount = 0;
+
+            while( list.length < numOfParagraphs )
+            {
+            	if( iParagraphCount +1 > lorem.length )
+            	{
+            		iParagraphCount = 0;
+            	}
+
+            	list.push( lorem[ iParagraphCount ] );
+            	iParagraphCount++;
+            }
+            document.forms[0].output.value = list.join( "\n\n" );
+        }
+    }
+
+    function copypaste()
+    {
+        var copyText = document.getElementById("LoremText");
+		 copyText.select();
+		 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		 document.execCommand("copy");
+    }
+    //]]>
+</script>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+	<header id="header" class="alt">
+					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index_en.html" class="selected">Home</a></li>
+							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
+							<li><a href="about_this_website.html">About this website</a></li>
+							<li><a href="links_en.html">Links</a></li>
+							<li><a href="index.html" class="button-top">German</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+	<section id="banner">
+		<div class="title">
+					<h2>Lorem Ipsum Generator</h2>
+		</div>
+		<div class="title">
+					<p>For designers, typesetters, layouts, enthusiasts and many more.</p>
+		</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
+						<input type="hidden" name="loremString" value="latin">
+                		<h2>Generate Lorem Ipsum Text</h2>
+							<div>&nbsp</div>
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-5 col-12-mobilep">
+								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
+								</div>
+                  				<div class="col-5 col-12-mobilep">
+									<select name="type" >
+										<option value="characters">Characters</option>
+										<option value="words" selected="selected">Words</option>
+										<option value="paragraphs">Paragraphs</option>
+								  </select>
+								</div>
+								<div class="col-2 col-12-mobilep">
+                  					<input type="submit" name="btnOK" value="Update">
+                  				</div>
+						  </div>			
+                
+				 			<div class="row gtr-uniform gtr-50">		
+             					<div class="col-12 col-12-mobilep">
+                 					 <textarea cols="68" rows="6" name="output" wrap="PHYSICAL" id="LoremText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+           					  </div>	
+							
+							
+			  				  <div class="col-12 col-12-mobilep">
+                  					<input type="button" onClick="copypaste()" value="Copy Text" class="blue"><br/> and paste...
+				  				</div>			
+							</div>	
+							</form>
+					</section>
+						
+						
+					
+					<section class="box">
+						<div class="row gtr-uniform gtr-50">		
+             					<div class="col-8 col-12-mobilep">
+						<header>
+							<h3>Why Lorem Ipsum?</h3>
+						</header>
+						<p>When working on a project and the customer has not yet delivered the copy, something is missing... text. </p>
+					  		<p>If the project is complete but looking only half finished, try some Lorem ipsum... blind / filler / mock / dummy / greeked / placeholder text.</p>
+							<p>The advantage of the Lorem Ipsum text is that it appears to be natural, like the real copy</p>
+							<p>Simply generate as much Lorem ipsum text as you require, paste it into the layout as a temporary place holder and your project is one step closer to completion. Enjoy.</p>
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<span class="image fit"><img src="images/brochure_lorem.gif" alt="Lorem Ipsum Blind Text" /></span>
+							</div>	
+									
+									
+                    </section>
+						
+					<section class="box">	
+						<header>
+							<h3>Download Lorem ipsum text</h3>
+						</header>
+					  		
+						
+							<p>Here you can download various examples of Lorem ipsum text. Each text is available as a text or a word .doc (in .zip format).</p>
+					  		<p>PC - right mouse click and save to the desktop<br />
+							Mac - option click and save to desktop</p>
+						
+						<div class="table-wrapper">
+										<table>
+			
+											<tbody>
+												<tr>
+													<td>Original</td>
+													<td><a href="https://loremipsum.de/downloads/original.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/original.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 1</td>
+													<td><a href="https://loremipsum.de/downloads/version1.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version1.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 2</td>
+													<td><a href="https://loremipsum.de/downloads/version2.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version2.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 3</td>
+													<td><a href="https://loremipsum.de/downloads/version3.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version3.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 4</td>
+													<td><a href="https://loremipsum.de/downloads/version4.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version4.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 5</td>
+													<td><a href="https://loremipsum.de/downloads/version5.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version5.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 6</td>
+													<td><a href="https://loremipsum.de/downloads/version6.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version6.zip">download .doc file</a> (zipped)</td>
+												</tr>
+											</tbody>
+											
+										</table>
+					  </div>
+                    </section>	
+
+	<section class="box">	
+						<header>
+							<h3>Original Text in Latin, English and German</h3>
+						</header>
+							<hr />
+							<h4>Latin</h4>
+						<p>"De finibus bonorum et malorum" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<hr />
+							<h4>English</h4>
+							<p>"The Extremes of Good and Evil" Cicero<br/>
+							Sections 1.10.32 - 1.10.33</p>
+					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+	 						 <p>Translation from H. Rackham<br />
+	 						 1914 edition De Finibus</p>
+							<hr />
+							<h4>German </h4>
+						<p>"Das höchste Gut und Uebel" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Uebungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?</p>
+							<p>Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Uebernahme gewisser Schmerzen sich grössere erspare.</p>
+	
+							
+					  	
+                    </section>
+						
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>get inspired</h2>
+					<h4><a href="https://www.grafikdesign.de" target="_blank">visit grafikdesign.de</a></h4>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li><a href="imprint_en.html">Imprint &amp; Privacy</a></li>
+						<li><a href="" onclick="openCCbanner(); return false;">Cookie-Settings</a></li>
+					</ul>
+	</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/cookie-en.js"></script>
+			<script src="assets/js//cookieconsent.min.js" data-cfasync="false"></script>
+
+</body>
+</html>
+<!DOCTYPE HTML>
+<!-- Signale.com -->
+<html>
+	<head>
+		<title>Lorem ipsum - Generator and Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="loremipsum.de, Lorem ipsum dolor sit amet, lorem, lorem ipsum, generator, lorem ipsum generator, designers, designer, blind, dummy, mock, filler">
+<meta name="description" content="loremipsum.de was the first ever dedicated website for Lorem ipsum. You can generate your own lorem ipsum text and find out about the history and modern days useage of lorem ipsum text">
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/cookieconsent.min.css" />
+
+
+<!--
+        Lorem Ipsum generater idea based on the code written by Captain Cursor,
+        aka Taylor and later adapted by Travis Spencer . 
+		This web version has been adapted 
+		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
+
+        This code is public domain. If you use it, please provide credits to
+		to all of the above.
+-->
+
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+
+    function objectTag()
+    {
+    	var lorem = new Array();
+
+    	switch( document.theForm.loremString.value )
+    	{
+    		case "latin":
+    		{
+				lorem[0] = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ";
+				lorem[1] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ";
+				lorem[2] = "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+				lorem[3] = "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ";
+				lorem[4] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ";
+				lorem[5] = "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. ";
+				lorem[6] = "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. ";
+    			break;
+    		}
+    		
+    	}
+
+        if( "characters" == document.theForm.type.value )
+        {
+        	var outputString = '';
+            var numOfChars = document.theForm.numbers.value;
+            numOfChars = parseInt( numOfChars );
+            var tempString = lorem.join( "\n\n" );
+            while ( outputString.length < numOfChars ) outputString += tempString;
+            document.forms[0].output.value = outputString.substring(0, numOfChars );
+        }
+        else if( "words" == document.theForm.type.value )
+        {
+            var numOfWords = document.theForm.numbers.value;
+            numOfWords = parseInt( numOfWords );
+
+            var list = new Array();
+            var wordList = new Array();
+            wordList = lorem[ 0 ].split( ' ' );
+            var iParagraphCount = 0;
+            var iWordCount = 0;
+
+            while( list.length < numOfWords )
+            {
+            	if( iWordCount > wordList.length )
+            	{
+            		iWordCount = 0;
+            		iParagraphCount++;
+            		if( iParagraphCount + 1 > lorem.length ) iParagraphCount = 0;
+            		wordList = lorem[ iParagraphCount ].split( ' ' );
+            		wordList[ 0 ] = "\n\n" + wordList[ 0 ];
+            	}
+
+            	list.push( wordList[ iWordCount ] );
+
+            	iWordCount++;
+            }
+            document.forms[0].output.value = list.join( ' ' );
+        }
+        else
+        {
+            var numOfParagraphs = document.theForm.numbers.value;
+            numOfParagraphs = parseInt( numOfParagraphs );
+
+            var list = new Array();
+			var iParagraphCount = 0;
+
+            while( list.length < numOfParagraphs )
+            {
+            	if( iParagraphCount +1 > lorem.length )
+            	{
+            		iParagraphCount = 0;
+            	}
+
+            	list.push( lorem[ iParagraphCount ] );
+            	iParagraphCount++;
+            }
+            document.forms[0].output.value = list.join( "\n\n" );
+        }
+    }
+
+    function copypaste()
+    {
+        var copyText = document.getElementById("LoremText");
+		 copyText.select();
+		 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		 document.execCommand("copy");
+    }
+    //]]>
+</script>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+	<header id="header" class="alt">
+					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index_en.html" class="selected">Home</a></li>
+							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
+							<li><a href="about_this_website.html">About this website</a></li>
+							<li><a href="links_en.html">Links</a></li>
+							<li><a href="index.html" class="button-top">German</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+	<section id="banner">
+		<div class="title">
+					<h2>Lorem Ipsum Generator</h2>
+		</div>
+		<div class="title">
+					<p>For designers, typesetters, layouts, enthusiasts and many more.</p>
+		</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
+						<input type="hidden" name="loremString" value="latin">
+                		<h2>Generate Lorem Ipsum Text</h2>
+							<div>&nbsp</div>
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-5 col-12-mobilep">
+								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
+								</div>
+                  				<div class="col-5 col-12-mobilep">
+									<select name="type" >
+										<option value="characters">Characters</option>
+										<option value="words" selected="selected">Words</option>
+										<option value="paragraphs">Paragraphs</option>
+								  </select>
+								</div>
+								<div class="col-2 col-12-mobilep">
+                  					<input type="submit" name="btnOK" value="Update">
+                  				</div>
+						  </div>			
+                
+				 			<div class="row gtr-uniform gtr-50">		
+             					<div class="col-12 col-12-mobilep">
+                 					 <textarea cols="68" rows="6" name="output" wrap="PHYSICAL" id="LoremText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+           					  </div>	
+							
+							
+			  				  <div class="col-12 col-12-mobilep">
+                  					<input type="button" onClick="copypaste()" value="Copy Text" class="blue"><br/> and paste...
+				  				</div>			
+							</div>	
+							</form>
+					</section>
+						
+						
+					
+					<section class="box">
+						<div class="row gtr-uniform gtr-50">		
+             					<div class="col-8 col-12-mobilep">
+						<header>
+							<h3>Why Lorem Ipsum?</h3>
+						</header>
+						<p>When working on a project and the customer has not yet delivered the copy, something is missing... text. </p>
+					  		<p>If the project is complete but looking only half finished, try some Lorem ipsum... blind / filler / mock / dummy / greeked / placeholder text.</p>
+							<p>The advantage of the Lorem Ipsum text is that it appears to be natural, like the real copy</p>
+							<p>Simply generate as much Lorem ipsum text as you require, paste it into the layout as a temporary place holder and your project is one step closer to completion. Enjoy.</p>
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<span class="image fit"><img src="images/brochure_lorem.gif" alt="Lorem Ipsum Blind Text" /></span>
+							</div>	
+									
+									
+                    </section>
+						
+					<section class="box">	
+						<header>
+							<h3>Download Lorem ipsum text</h3>
+						</header>
+					  		
+						
+							<p>Here you can download various examples of Lorem ipsum text. Each text is available as a text or a word .doc (in .zip format).</p>
+					  		<p>PC - right mouse click and save to the desktop<br />
+							Mac - option click and save to desktop</p>
+						
+						<div class="table-wrapper">
+										<table>
+			
+											<tbody>
+												<tr>
+													<td>Original</td>
+													<td><a href="https://loremipsum.de/downloads/original.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/original.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 1</td>
+													<td><a href="https://loremipsum.de/downloads/version1.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version1.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 2</td>
+													<td><a href="https://loremipsum.de/downloads/version2.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version2.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 3</td>
+													<td><a href="https://loremipsum.de/downloads/version3.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version3.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 4</td>
+													<td><a href="https://loremipsum.de/downloads/version4.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version4.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 5</td>
+													<td><a href="https://loremipsum.de/downloads/version5.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version5.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 6</td>
+													<td><a href="https://loremipsum.de/downloads/version6.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version6.zip">download .doc file</a> (zipped)</td>
+												</tr>
+											</tbody>
+											
+										</table>
+					  </div>
+                    </section>	
+
+	<section class="box">	
+						<header>
+							<h3>Original Text in Latin, English and German</h3>
+						</header>
+							<hr />
+							<h4>Latin</h4>
+						<p>"De finibus bonorum et malorum" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<hr />
+							<h4>English</h4>
+							<p>"The Extremes of Good and Evil" Cicero<br/>
+							Sections 1.10.32 - 1.10.33</p>
+					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+	 						 <p>Translation from H. Rackham<br />
+	 						 1914 edition De Finibus</p>
+							<hr />
+							<h4>German </h4>
+						<p>"Das höchste Gut und Uebel" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Uebungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?</p>
+							<p>Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Uebernahme gewisser Schmerzen sich grössere erspare.</p>
+	
+							
+					  	
+                    </section>
+						
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>get inspired</h2>
+					<h4><a href="https://www.grafikdesign.de" target="_blank">visit grafikdesign.de</a></h4>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li><a href="imprint_en.html">Imprint &amp; Privacy</a></li>
+						<li><a href="" onclick="openCCbanner(); return false;">Cookie-Settings</a></li>
+					</ul>
+	</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/cookie-en.js"></script>
+			<script src="assets/js//cookieconsent.min.js" data-cfasync="false"></script>
+
+</body>
+</html>
+<!DOCTYPE HTML>
+<!-- Signale.com -->
+<html>
+	<head>
+		<title>Lorem ipsum - Generator and Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="loremipsum.de, Lorem ipsum dolor sit amet, lorem, lorem ipsum, generator, lorem ipsum generator, designers, designer, blind, dummy, mock, filler">
+<meta name="description" content="loremipsum.de was the first ever dedicated website for Lorem ipsum. You can generate your own lorem ipsum text and find out about the history and modern days useage of lorem ipsum text">
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/cookieconsent.min.css" />
+
+
+<!--
+        Lorem Ipsum generater idea based on the code written by Captain Cursor,
+        aka Taylor and later adapted by Travis Spencer . 
+		This web version has been adapted 
+		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
+
+        This code is public domain. If you use it, please provide credits to
+		to all of the above.
+-->
+
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+
+    function objectTag()
+    {
+    	var lorem = new Array();
+
+    	switch( document.theForm.loremString.value )
+    	{
+    		case "latin":
+    		{
+				lorem[0] = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ";
+				lorem[1] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ";
+				lorem[2] = "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+				lorem[3] = "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ";
+				lorem[4] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ";
+				lorem[5] = "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. ";
+				lorem[6] = "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. ";
+    			break;
+    		}
+    		
+    	}
+
+        if( "characters" == document.theForm.type.value )
+        {
+        	var outputString = '';
+            var numOfChars = document.theForm.numbers.value;
+            numOfChars = parseInt( numOfChars );
+            var tempString = lorem.join( "\n\n" );
+            while ( outputString.length < numOfChars ) outputString += tempString;
+            document.forms[0].output.value = outputString.substring(0, numOfChars );
+        }
+        else if( "words" == document.theForm.type.value )
+        {
+            var numOfWords = document.theForm.numbers.value;
+            numOfWords = parseInt( numOfWords );
+
+            var list = new Array();
+            var wordList = new Array();
+            wordList = lorem[ 0 ].split( ' ' );
+            var iParagraphCount = 0;
+            var iWordCount = 0;
+
+            while( list.length < numOfWords )
+            {
+            	if( iWordCount > wordList.length )
+            	{
+            		iWordCount = 0;
+            		iParagraphCount++;
+            		if( iParagraphCount + 1 > lorem.length ) iParagraphCount = 0;
+            		wordList = lorem[ iParagraphCount ].split( ' ' );
+            		wordList[ 0 ] = "\n\n" + wordList[ 0 ];
+            	}
+
+            	list.push( wordList[ iWordCount ] );
+
+            	iWordCount++;
+            }
+            document.forms[0].output.value = list.join( ' ' );
+        }
+        else
+        {
+            var numOfParagraphs = document.theForm.numbers.value;
+            numOfParagraphs = parseInt( numOfParagraphs );
+
+            var list = new Array();
+			var iParagraphCount = 0;
+
+            while( list.length < numOfParagraphs )
+            {
+            	if( iParagraphCount +1 > lorem.length )
+            	{
+            		iParagraphCount = 0;
+            	}
+
+            	list.push( lorem[ iParagraphCount ] );
+            	iParagraphCount++;
+            }
+            document.forms[0].output.value = list.join( "\n\n" );
+        }
+    }
+
+    function copypaste()
+    {
+        var copyText = document.getElementById("LoremText");
+		 copyText.select();
+		 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		 document.execCommand("copy");
+    }
+    //]]>
+</script>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+	<header id="header" class="alt">
+					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index_en.html" class="selected">Home</a></li>
+							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
+							<li><a href="about_this_website.html">About this website</a></li>
+							<li><a href="links_en.html">Links</a></li>
+							<li><a href="index.html" class="button-top">German</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+	<section id="banner">
+		<div class="title">
+					<h2>Lorem Ipsum Generator</h2>
+		</div>
+		<div class="title">
+					<p>For designers, typesetters, layouts, enthusiasts and many more.</p>
+		</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
+						<input type="hidden" name="loremString" value="latin">
+                		<h2>Generate Lorem Ipsum Text</h2>
+							<div>&nbsp</div>
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-5 col-12-mobilep">
+								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
+								</div>
+                  				<div class="col-5 col-12-mobilep">
+									<select name="type" >
+										<option value="characters">Characters</option>
+										<option value="words" selected="selected">Words</option>
+										<option value="paragraphs">Paragraphs</option>
+								  </select>
+								</div>
+								<div class="col-2 col-12-mobilep">
+                  					<input type="submit" name="btnOK" value="Update">
+                  				</div>
+						  </div>			
+                
+				 			<div class="row gtr-uniform gtr-50">		
+             					<div class="col-12 col-12-mobilep">
+                 					 <textarea cols="68" rows="6" name="output" wrap="PHYSICAL" id="LoremText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+           					  </div>	
+							
+							
+			  				  <div class="col-12 col-12-mobilep">
+                  					<input type="button" onClick="copypaste()" value="Copy Text" class="blue"><br/> and paste...
+				  				</div>			
+							</div>	
+							</form>
+					</section>
+						
+						
+					
+					<section class="box">
+						<div class="row gtr-uniform gtr-50">		
+             					<div class="col-8 col-12-mobilep">
+						<header>
+							<h3>Why Lorem Ipsum?</h3>
+						</header>
+						<p>When working on a project and the customer has not yet delivered the copy, something is missing... text. </p>
+					  		<p>If the project is complete but looking only half finished, try some Lorem ipsum... blind / filler / mock / dummy / greeked / placeholder text.</p>
+							<p>The advantage of the Lorem Ipsum text is that it appears to be natural, like the real copy</p>
+							<p>Simply generate as much Lorem ipsum text as you require, paste it into the layout as a temporary place holder and your project is one step closer to completion. Enjoy.</p>
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<span class="image fit"><img src="images/brochure_lorem.gif" alt="Lorem Ipsum Blind Text" /></span>
+							</div>	
+									
+									
+                    </section>
+						
+					<section class="box">	
+						<header>
+							<h3>Download Lorem ipsum text</h3>
+						</header>
+					  		
+						
+							<p>Here you can download various examples of Lorem ipsum text. Each text is available as a text or a word .doc (in .zip format).</p>
+					  		<p>PC - right mouse click and save to the desktop<br />
+							Mac - option click and save to desktop</p>
+						
+						<div class="table-wrapper">
+										<table>
+			
+											<tbody>
+												<tr>
+													<td>Original</td>
+													<td><a href="https://loremipsum.de/downloads/original.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/original.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 1</td>
+													<td><a href="https://loremipsum.de/downloads/version1.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version1.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 2</td>
+													<td><a href="https://loremipsum.de/downloads/version2.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version2.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 3</td>
+													<td><a href="https://loremipsum.de/downloads/version3.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version3.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 4</td>
+													<td><a href="https://loremipsum.de/downloads/version4.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version4.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 5</td>
+													<td><a href="https://loremipsum.de/downloads/version5.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version5.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 6</td>
+													<td><a href="https://loremipsum.de/downloads/version6.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version6.zip">download .doc file</a> (zipped)</td>
+												</tr>
+											</tbody>
+											
+										</table>
+					  </div>
+                    </section>	
+
+	<section class="box">	
+						<header>
+							<h3>Original Text in Latin, English and German</h3>
+						</header>
+							<hr />
+							<h4>Latin</h4>
+						<p>"De finibus bonorum et malorum" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<hr />
+							<h4>English</h4>
+							<p>"The Extremes of Good and Evil" Cicero<br/>
+							Sections 1.10.32 - 1.10.33</p>
+					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+	 						 <p>Translation from H. Rackham<br />
+	 						 1914 edition De Finibus</p>
+							<hr />
+							<h4>German </h4>
+						<p>"Das höchste Gut und Uebel" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Uebungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?</p>
+							<p>Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Uebernahme gewisser Schmerzen sich grössere erspare.</p>
+	
+							
+					  	
+                    </section>
+						
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>get inspired</h2>
+					<h4><a href="https://www.grafikdesign.de" target="_blank">visit grafikdesign.de</a></h4>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li><a href="imprint_en.html">Imprint &amp; Privacy</a></li>
+						<li><a href="" onclick="openCCbanner(); return false;">Cookie-Settings</a></li>
+					</ul>
+	</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/cookie-en.js"></script>
+			<script src="assets/js//cookieconsent.min.js" data-cfasync="false"></script>
+
+</body>
+</html>
+<!DOCTYPE HTML>
+<!-- Signale.com -->
+<html>
+	<head>
+		<title>Lorem ipsum - Generator and Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="loremipsum.de, Lorem ipsum dolor sit amet, lorem, lorem ipsum, generator, lorem ipsum generator, designers, designer, blind, dummy, mock, filler">
+<meta name="description" content="loremipsum.de was the first ever dedicated website for Lorem ipsum. You can generate your own lorem ipsum text and find out about the history and modern days useage of lorem ipsum text">
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/cookieconsent.min.css" />
+
+
+<!--
+        Lorem Ipsum generater idea based on the code written by Captain Cursor,
+        aka Taylor and later adapted by Travis Spencer . 
+		This web version has been adapted 
+		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
+
+        This code is public domain. If you use it, please provide credits to
+		to all of the above.
+-->
+
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+
+    function objectTag()
+    {
+    	var lorem = new Array();
+
+    	switch( document.theForm.loremString.value )
+    	{
+    		case "latin":
+    		{
+				lorem[0] = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ";
+				lorem[1] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ";
+				lorem[2] = "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+				lorem[3] = "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ";
+				lorem[4] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ";
+				lorem[5] = "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. ";
+				lorem[6] = "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. ";
+    			break;
+    		}
+    		
+    	}
+
+        if( "characters" == document.theForm.type.value )
+        {
+        	var outputString = '';
+            var numOfChars = document.theForm.numbers.value;
+            numOfChars = parseInt( numOfChars );
+            var tempString = lorem.join( "\n\n" );
+            while ( outputString.length < numOfChars ) outputString += tempString;
+            document.forms[0].output.value = outputString.substring(0, numOfChars );
+        }
+        else if( "words" == document.theForm.type.value )
+        {
+            var numOfWords = document.theForm.numbers.value;
+            numOfWords = parseInt( numOfWords );
+
+            var list = new Array();
+            var wordList = new Array();
+            wordList = lorem[ 0 ].split( ' ' );
+            var iParagraphCount = 0;
+            var iWordCount = 0;
+
+            while( list.length < numOfWords )
+            {
+            	if( iWordCount > wordList.length )
+            	{
+            		iWordCount = 0;
+            		iParagraphCount++;
+            		if( iParagraphCount + 1 > lorem.length ) iParagraphCount = 0;
+            		wordList = lorem[ iParagraphCount ].split( ' ' );
+            		wordList[ 0 ] = "\n\n" + wordList[ 0 ];
+            	}
+
+            	list.push( wordList[ iWordCount ] );
+
+            	iWordCount++;
+            }
+            document.forms[0].output.value = list.join( ' ' );
+        }
+        else
+        {
+            var numOfParagraphs = document.theForm.numbers.value;
+            numOfParagraphs = parseInt( numOfParagraphs );
+
+            var list = new Array();
+			var iParagraphCount = 0;
+
+            while( list.length < numOfParagraphs )
+            {
+            	if( iParagraphCount +1 > lorem.length )
+            	{
+            		iParagraphCount = 0;
+            	}
+
+            	list.push( lorem[ iParagraphCount ] );
+            	iParagraphCount++;
+            }
+            document.forms[0].output.value = list.join( "\n\n" );
+        }
+    }
+
+    function copypaste()
+    {
+        var copyText = document.getElementById("LoremText");
+		 copyText.select();
+		 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		 document.execCommand("copy");
+    }
+    //]]>
+</script>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+	<header id="header" class="alt">
+					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index_en.html" class="selected">Home</a></li>
+							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
+							<li><a href="about_this_website.html">About this website</a></li>
+							<li><a href="links_en.html">Links</a></li>
+							<li><a href="index.html" class="button-top">German</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+	<section id="banner">
+		<div class="title">
+					<h2>Lorem Ipsum Generator</h2>
+		</div>
+		<div class="title">
+					<p>For designers, typesetters, layouts, enthusiasts and many more.</p>
+		</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
+						<input type="hidden" name="loremString" value="latin">
+                		<h2>Generate Lorem Ipsum Text</h2>
+							<div>&nbsp</div>
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-5 col-12-mobilep">
+								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
+								</div>
+                  				<div class="col-5 col-12-mobilep">
+									<select name="type" >
+										<option value="characters">Characters</option>
+										<option value="words" selected="selected">Words</option>
+										<option value="paragraphs">Paragraphs</option>
+								  </select>
+								</div>
+								<div class="col-2 col-12-mobilep">
+                  					<input type="submit" name="btnOK" value="Update">
+                  				</div>
+						  </div>			
+                
+				 			<div class="row gtr-uniform gtr-50">		
+             					<div class="col-12 col-12-mobilep">
+                 					 <textarea cols="68" rows="6" name="output" wrap="PHYSICAL" id="LoremText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+           					  </div>	
+							
+							
+			  				  <div class="col-12 col-12-mobilep">
+                  					<input type="button" onClick="copypaste()" value="Copy Text" class="blue"><br/> and paste...
+				  				</div>			
+							</div>	
+							</form>
+					</section>
+						
+						
+					
+					<section class="box">
+						<div class="row gtr-uniform gtr-50">		
+             					<div class="col-8 col-12-mobilep">
+						<header>
+							<h3>Why Lorem Ipsum?</h3>
+						</header>
+						<p>When working on a project and the customer has not yet delivered the copy, something is missing... text. </p>
+					  		<p>If the project is complete but looking only half finished, try some Lorem ipsum... blind / filler / mock / dummy / greeked / placeholder text.</p>
+							<p>The advantage of the Lorem Ipsum text is that it appears to be natural, like the real copy</p>
+							<p>Simply generate as much Lorem ipsum text as you require, paste it into the layout as a temporary place holder and your project is one step closer to completion. Enjoy.</p>
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<span class="image fit"><img src="images/brochure_lorem.gif" alt="Lorem Ipsum Blind Text" /></span>
+							</div>	
+									
+									
+                    </section>
+						
+					<section class="box">	
+						<header>
+							<h3>Download Lorem ipsum text</h3>
+						</header>
+					  		
+						
+							<p>Here you can download various examples of Lorem ipsum text. Each text is available as a text or a word .doc (in .zip format).</p>
+					  		<p>PC - right mouse click and save to the desktop<br />
+							Mac - option click and save to desktop</p>
+						
+						<div class="table-wrapper">
+										<table>
+			
+											<tbody>
+												<tr>
+													<td>Original</td>
+													<td><a href="https://loremipsum.de/downloads/original.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/original.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 1</td>
+													<td><a href="https://loremipsum.de/downloads/version1.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version1.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 2</td>
+													<td><a href="https://loremipsum.de/downloads/version2.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version2.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 3</td>
+													<td><a href="https://loremipsum.de/downloads/version3.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version3.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 4</td>
+													<td><a href="https://loremipsum.de/downloads/version4.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version4.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 5</td>
+													<td><a href="https://loremipsum.de/downloads/version5.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version5.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 6</td>
+													<td><a href="https://loremipsum.de/downloads/version6.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version6.zip">download .doc file</a> (zipped)</td>
+												</tr>
+											</tbody>
+											
+										</table>
+					  </div>
+                    </section>	
+
+	<section class="box">	
+						<header>
+							<h3>Original Text in Latin, English and German</h3>
+						</header>
+							<hr />
+							<h4>Latin</h4>
+						<p>"De finibus bonorum et malorum" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<hr />
+							<h4>English</h4>
+							<p>"The Extremes of Good and Evil" Cicero<br/>
+							Sections 1.10.32 - 1.10.33</p>
+					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+	 						 <p>Translation from H. Rackham<br />
+	 						 1914 edition De Finibus</p>
+							<hr />
+							<h4>German </h4>
+						<p>"Das höchste Gut und Uebel" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Uebungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?</p>
+							<p>Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Uebernahme gewisser Schmerzen sich grössere erspare.</p>
+	
+							
+					  	
+                    </section>
+						
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>get inspired</h2>
+					<h4><a href="https://www.grafikdesign.de" target="_blank">visit grafikdesign.de</a></h4>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li><a href="imprint_en.html">Imprint &amp; Privacy</a></li>
+						<li><a href="" onclick="openCCbanner(); return false;">Cookie-Settings</a></li>
+					</ul>
+	</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/cookie-en.js"></script>
+			<script src="assets/js//cookieconsent.min.js" data-cfasync="false"></script>
+
+</body>
+</html>
+<!DOCTYPE HTML>
+<!-- Signale.com -->
+<html>
+	<head>
+		<title>Lorem ipsum - Generator and Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="loremipsum.de, Lorem ipsum dolor sit amet, lorem, lorem ipsum, generator, lorem ipsum generator, designers, designer, blind, dummy, mock, filler">
+<meta name="description" content="loremipsum.de was the first ever dedicated website for Lorem ipsum. You can generate your own lorem ipsum text and find out about the history and modern days useage of lorem ipsum text">
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/cookieconsent.min.css" />
+
+
+<!--
+        Lorem Ipsum generater idea based on the code written by Captain Cursor,
+        aka Taylor and later adapted by Travis Spencer . 
+		This web version has been adapted 
+		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
+
+        This code is public domain. If you use it, please provide credits to
+		to all of the above.
+-->
+
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+
+    function objectTag()
+    {
+    	var lorem = new Array();
+
+    	switch( document.theForm.loremString.value )
+    	{
+    		case "latin":
+    		{
+				lorem[0] = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ";
+				lorem[1] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ";
+				lorem[2] = "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+				lorem[3] = "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ";
+				lorem[4] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ";
+				lorem[5] = "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. ";
+				lorem[6] = "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. ";
+    			break;
+    		}
+    		
+    	}
+
+        if( "characters" == document.theForm.type.value )
+        {
+        	var outputString = '';
+            var numOfChars = document.theForm.numbers.value;
+            numOfChars = parseInt( numOfChars );
+            var tempString = lorem.join( "\n\n" );
+            while ( outputString.length < numOfChars ) outputString += tempString;
+            document.forms[0].output.value = outputString.substring(0, numOfChars );
+        }
+        else if( "words" == document.theForm.type.value )
+        {
+            var numOfWords = document.theForm.numbers.value;
+            numOfWords = parseInt( numOfWords );
+
+            var list = new Array();
+            var wordList = new Array();
+            wordList = lorem[ 0 ].split( ' ' );
+            var iParagraphCount = 0;
+            var iWordCount = 0;
+
+            while( list.length < numOfWords )
+            {
+            	if( iWordCount > wordList.length )
+            	{
+            		iWordCount = 0;
+            		iParagraphCount++;
+            		if( iParagraphCount + 1 > lorem.length ) iParagraphCount = 0;
+            		wordList = lorem[ iParagraphCount ].split( ' ' );
+            		wordList[ 0 ] = "\n\n" + wordList[ 0 ];
+            	}
+
+            	list.push( wordList[ iWordCount ] );
+
+            	iWordCount++;
+            }
+            document.forms[0].output.value = list.join( ' ' );
+        }
+        else
+        {
+            var numOfParagraphs = document.theForm.numbers.value;
+            numOfParagraphs = parseInt( numOfParagraphs );
+
+            var list = new Array();
+			var iParagraphCount = 0;
+
+            while( list.length < numOfParagraphs )
+            {
+            	if( iParagraphCount +1 > lorem.length )
+            	{
+            		iParagraphCount = 0;
+            	}
+
+            	list.push( lorem[ iParagraphCount ] );
+            	iParagraphCount++;
+            }
+            document.forms[0].output.value = list.join( "\n\n" );
+        }
+    }
+
+    function copypaste()
+    {
+        var copyText = document.getElementById("LoremText");
+		 copyText.select();
+		 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		 document.execCommand("copy");
+    }
+    //]]>
+</script>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+	<header id="header" class="alt">
+					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index_en.html" class="selected">Home</a></li>
+							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
+							<li><a href="about_this_website.html">About this website</a></li>
+							<li><a href="links_en.html">Links</a></li>
+							<li><a href="index.html" class="button-top">German</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+	<section id="banner">
+		<div class="title">
+					<h2>Lorem Ipsum Generator</h2>
+		</div>
+		<div class="title">
+					<p>For designers, typesetters, layouts, enthusiasts and many more.</p>
+		</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
+						<input type="hidden" name="loremString" value="latin">
+                		<h2>Generate Lorem Ipsum Text</h2>
+							<div>&nbsp</div>
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-5 col-12-mobilep">
+								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
+								</div>
+                  				<div class="col-5 col-12-mobilep">
+									<select name="type" >
+										<option value="characters">Characters</option>
+										<option value="words" selected="selected">Words</option>
+										<option value="paragraphs">Paragraphs</option>
+								  </select>
+								</div>
+								<div class="col-2 col-12-mobilep">
+                  					<input type="submit" name="btnOK" value="Update">
+                  				</div>
+						  </div>			
+                
+				 			<div class="row gtr-uniform gtr-50">		
+             					<div class="col-12 col-12-mobilep">
+                 					 <textarea cols="68" rows="6" name="output" wrap="PHYSICAL" id="LoremText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+           					  </div>	
+							
+							
+			  				  <div class="col-12 col-12-mobilep">
+                  					<input type="button" onClick="copypaste()" value="Copy Text" class="blue"><br/> and paste...
+				  				</div>			
+							</div>	
+							</form>
+					</section>
+						
+						
+					
+					<section class="box">
+						<div class="row gtr-uniform gtr-50">		
+             					<div class="col-8 col-12-mobilep">
+						<header>
+							<h3>Why Lorem Ipsum?</h3>
+						</header>
+						<p>When working on a project and the customer has not yet delivered the copy, something is missing... text. </p>
+					  		<p>If the project is complete but looking only half finished, try some Lorem ipsum... blind / filler / mock / dummy / greeked / placeholder text.</p>
+							<p>The advantage of the Lorem Ipsum text is that it appears to be natural, like the real copy</p>
+							<p>Simply generate as much Lorem ipsum text as you require, paste it into the layout as a temporary place holder and your project is one step closer to completion. Enjoy.</p>
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<span class="image fit"><img src="images/brochure_lorem.gif" alt="Lorem Ipsum Blind Text" /></span>
+							</div>	
+									
+									
+                    </section>
+						
+					<section class="box">	
+						<header>
+							<h3>Download Lorem ipsum text</h3>
+						</header>
+					  		
+						
+							<p>Here you can download various examples of Lorem ipsum text. Each text is available as a text or a word .doc (in .zip format).</p>
+					  		<p>PC - right mouse click and save to the desktop<br />
+							Mac - option click and save to desktop</p>
+						
+						<div class="table-wrapper">
+										<table>
+			
+											<tbody>
+												<tr>
+													<td>Original</td>
+													<td><a href="https://loremipsum.de/downloads/original.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/original.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 1</td>
+													<td><a href="https://loremipsum.de/downloads/version1.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version1.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 2</td>
+													<td><a href="https://loremipsum.de/downloads/version2.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version2.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 3</td>
+													<td><a href="https://loremipsum.de/downloads/version3.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version3.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 4</td>
+													<td><a href="https://loremipsum.de/downloads/version4.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version4.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 5</td>
+													<td><a href="https://loremipsum.de/downloads/version5.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version5.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 6</td>
+													<td><a href="https://loremipsum.de/downloads/version6.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version6.zip">download .doc file</a> (zipped)</td>
+												</tr>
+											</tbody>
+											
+										</table>
+					  </div>
+                    </section>	
+
+	<section class="box">	
+						<header>
+							<h3>Original Text in Latin, English and German</h3>
+						</header>
+							<hr />
+							<h4>Latin</h4>
+						<p>"De finibus bonorum et malorum" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<hr />
+							<h4>English</h4>
+							<p>"The Extremes of Good and Evil" Cicero<br/>
+							Sections 1.10.32 - 1.10.33</p>
+					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+	 						 <p>Translation from H. Rackham<br />
+	 						 1914 edition De Finibus</p>
+							<hr />
+							<h4>German </h4>
+						<p>"Das höchste Gut und Uebel" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Uebungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?</p>
+							<p>Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Uebernahme gewisser Schmerzen sich grössere erspare.</p>
+	
+							
+					  	
+                    </section>
+						
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>get inspired</h2>
+					<h4><a href="https://www.grafikdesign.de" target="_blank">visit grafikdesign.de</a></h4>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li><a href="imprint_en.html">Imprint &amp; Privacy</a></li>
+						<li><a href="" onclick="openCCbanner(); return false;">Cookie-Settings</a></li>
+					</ul>
+	</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/cookie-en.js"></script>
+			<script src="assets/js//cookieconsent.min.js" data-cfasync="false"></script>
+
+</body>
+</html>
+<!DOCTYPE HTML>
+<!-- Signale.com -->
+<html>
+	<head>
+		<title>Lorem ipsum - Generator and Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="loremipsum.de, Lorem ipsum dolor sit amet, lorem, lorem ipsum, generator, lorem ipsum generator, designers, designer, blind, dummy, mock, filler">
+<meta name="description" content="loremipsum.de was the first ever dedicated website for Lorem ipsum. You can generate your own lorem ipsum text and find out about the history and modern days useage of lorem ipsum text">
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+		
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/cookieconsent.min.css" />
+
+
+<!--
+        Lorem Ipsum generater idea based on the code written by Captain Cursor,
+        aka Taylor and later adapted by Travis Spencer . 
+		This web version has been adapted 
+		from Will Munslow (http://subterrane.com) version specially for Loremipsum.de
+
+        This code is public domain. If you use it, please provide credits to
+		to all of the above.
+-->
+
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+
+    function objectTag()
+    {
+    	var lorem = new Array();
+
+    	switch( document.theForm.loremString.value )
+    	{
+    		case "latin":
+    		{
+				lorem[0] = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. ";
+				lorem[1] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ";
+				lorem[2] = "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ";
+				lorem[3] = "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ";
+				lorem[4] = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ";
+				lorem[5] = "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. ";
+				lorem[6] = "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus. ";
+    			break;
+    		}
+    		
+    	}
+
+        if( "characters" == document.theForm.type.value )
+        {
+        	var outputString = '';
+            var numOfChars = document.theForm.numbers.value;
+            numOfChars = parseInt( numOfChars );
+            var tempString = lorem.join( "\n\n" );
+            while ( outputString.length < numOfChars ) outputString += tempString;
+            document.forms[0].output.value = outputString.substring(0, numOfChars );
+        }
+        else if( "words" == document.theForm.type.value )
+        {
+            var numOfWords = document.theForm.numbers.value;
+            numOfWords = parseInt( numOfWords );
+
+            var list = new Array();
+            var wordList = new Array();
+            wordList = lorem[ 0 ].split( ' ' );
+            var iParagraphCount = 0;
+            var iWordCount = 0;
+
+            while( list.length < numOfWords )
+            {
+            	if( iWordCount > wordList.length )
+            	{
+            		iWordCount = 0;
+            		iParagraphCount++;
+            		if( iParagraphCount + 1 > lorem.length ) iParagraphCount = 0;
+            		wordList = lorem[ iParagraphCount ].split( ' ' );
+            		wordList[ 0 ] = "\n\n" + wordList[ 0 ];
+            	}
+
+            	list.push( wordList[ iWordCount ] );
+
+            	iWordCount++;
+            }
+            document.forms[0].output.value = list.join( ' ' );
+        }
+        else
+        {
+            var numOfParagraphs = document.theForm.numbers.value;
+            numOfParagraphs = parseInt( numOfParagraphs );
+
+            var list = new Array();
+			var iParagraphCount = 0;
+
+            while( list.length < numOfParagraphs )
+            {
+            	if( iParagraphCount +1 > lorem.length )
+            	{
+            		iParagraphCount = 0;
+            	}
+
+            	list.push( lorem[ iParagraphCount ] );
+            	iParagraphCount++;
+            }
+            document.forms[0].output.value = list.join( "\n\n" );
+        }
+    }
+
+    function copypaste()
+    {
+        var copyText = document.getElementById("LoremText");
+		 copyText.select();
+		 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+		 document.execCommand("copy");
+    }
+    //]]>
+</script>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+	<header id="header" class="alt">
+					<h1><a href="index.html">Lorem ipsum</a> by Signale</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index_en.html" class="selected">Home</a></li>
+							<li><a href="about_lorem_ipsum.html">About Lorem ipsum</a></li>
+							<li><a href="about_this_website.html">About this website</a></li>
+							<li><a href="links_en.html">Links</a></li>
+							<li><a href="index.html" class="button-top">German</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+	<section id="banner">
+		<div class="title">
+					<h2>Lorem Ipsum Generator</h2>
+		</div>
+		<div class="title">
+					<p>For designers, typesetters, layouts, enthusiasts and many more.</p>
+		</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+						<form name="theForm" action="javascript:objectTag();" id="theForm" spellcheck="false">
+						<input type="hidden" name="loremString" value="latin">
+                		<h2>Generate Lorem Ipsum Text</h2>
+							<div>&nbsp</div>
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-5 col-12-mobilep">
+								  <input type="text" name="numbers" value="100"  >&nbsp;&nbsp;
+								</div>
+                  				<div class="col-5 col-12-mobilep">
+									<select name="type" >
+										<option value="characters">Characters</option>
+										<option value="words" selected="selected">Words</option>
+										<option value="paragraphs">Paragraphs</option>
+								  </select>
+								</div>
+								<div class="col-2 col-12-mobilep">
+                  					<input type="submit" name="btnOK" value="Update">
+                  				</div>
+						  </div>			
+                
+				 			<div class="row gtr-uniform gtr-50">		
+             					<div class="col-12 col-12-mobilep">
+                 					 <textarea cols="68" rows="6" name="output" wrap="PHYSICAL" id="LoremText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+           					  </div>	
+							
+							
+			  				  <div class="col-12 col-12-mobilep">
+                  					<input type="button" onClick="copypaste()" value="Copy Text" class="blue"><br/> and paste...
+				  				</div>			
+							</div>	
+							</form>
+					</section>
+						
+						
+					
+					<section class="box">
+						<div class="row gtr-uniform gtr-50">		
+             					<div class="col-8 col-12-mobilep">
+						<header>
+							<h3>Why Lorem Ipsum?</h3>
+						</header>
+						<p>When working on a project and the customer has not yet delivered the copy, something is missing... text. </p>
+					  		<p>If the project is complete but looking only half finished, try some Lorem ipsum... blind / filler / mock / dummy / greeked / placeholder text.</p>
+							<p>The advantage of the Lorem Ipsum text is that it appears to be natural, like the real copy</p>
+							<p>Simply generate as much Lorem ipsum text as you require, paste it into the layout as a temporary place holder and your project is one step closer to completion. Enjoy.</p>
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<span class="image fit"><img src="images/brochure_lorem.gif" alt="Lorem Ipsum Blind Text" /></span>
+							</div>	
+									
+									
+                    </section>
+						
+					<section class="box">	
+						<header>
+							<h3>Download Lorem ipsum text</h3>
+						</header>
+					  		
+						
+							<p>Here you can download various examples of Lorem ipsum text. Each text is available as a text or a word .doc (in .zip format).</p>
+					  		<p>PC - right mouse click and save to the desktop<br />
+							Mac - option click and save to desktop</p>
+						
+						<div class="table-wrapper">
+										<table>
+			
+											<tbody>
+												<tr>
+													<td>Original</td>
+													<td><a href="https://loremipsum.de/downloads/original.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/original.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 1</td>
+													<td><a href="https://loremipsum.de/downloads/version1.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version1.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 2</td>
+													<td><a href="https://loremipsum.de/downloads/version2.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version2.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 3</td>
+													<td><a href="https://loremipsum.de/downloads/version3.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version3.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 4</td>
+													<td><a href="https://loremipsum.de/downloads/version4.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version4.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 5</td>
+													<td><a href="https://loremipsum.de/downloads/version5.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version5.zip">download .doc file</a> (zipped)</td>
+												</tr>
+												<tr>
+													<td>Variation 6</td>
+													<td><a href="https://loremipsum.de/downloads/version6.txt">download .txt file</a></td>
+													<td><a href="https://loremipsum.de/downloads/version6.zip">download .doc file</a> (zipped)</td>
+												</tr>
+											</tbody>
+											
+										</table>
+					  </div>
+                    </section>	
+
+	<section class="box">	
+						<header>
+							<h3>Original Text in Latin, English and German</h3>
+						</header>
+							<hr />
+							<h4>Latin</h4>
+						<p>"De finibus bonorum et malorum" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+							<hr />
+							<h4>English</h4>
+							<p>"The Extremes of Good and Evil" Cicero<br/>
+							Sections 1.10.32 - 1.10.33</p>
+					  		<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+							<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
+	 						 <p>Translation from H. Rackham<br />
+	 						 1914 edition De Finibus</p>
+							<hr />
+							<h4>German </h4>
+						<p>"Das höchste Gut und Uebel" Cicero<br/>
+						Sections 1.10.32 - 1.10.33</p>
+					  		<p>Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Uebungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?</p>
+							<p>Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Uebernahme gewisser Schmerzen sich grössere erspare.</p>
+	
+							
+					  	
+                    </section>
+						
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>get inspired</h2>
+					<h4><a href="https://www.grafikdesign.de" target="_blank">visit grafikdesign.de</a></h4>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					
+					<ul class="copyright">
+						<li><a href="imprint_en.html">Imprint &amp; Privacy</a></li>
+						<li><a href="" onclick="openCCbanner(); return false;">Cookie-Settings</a></li>
+					</ul>
+	</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/cookie-en.js"></script>
+			<script src="assets/js//cookieconsent.min.js" data-cfasync="false"></script>
+
+</body>
+</html>
